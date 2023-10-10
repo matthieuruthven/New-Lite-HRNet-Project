@@ -1,0 +1,5 @@
+# Ignore all files in work_dir folder
+work_dirs
+
+# Ignore all files in .vscode folder
+.vscode
