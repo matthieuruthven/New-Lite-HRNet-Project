@@ -1,7 +1,7 @@
 _base_ = ['../../../_base_/default_runtime.py']
 
 # runtime
-train_cfg = dict(max_epochs=100, val_interval=100)
+train_cfg = dict(max_epochs=100, val_interval=1)
 
 # optimizer
 optim_wrapper = dict(optimizer=dict(
@@ -73,7 +73,7 @@ model = dict(
         loss=dict(type='KeypointMSELoss', use_target_weight=True),
         decoder=codec),
     test_cfg=dict(
-        flip_test=True,
+        flip_test=False,
         flip_mode='heatmap',
         shift_heatmap=True,
     ))
@@ -93,6 +93,7 @@ train_pipeline = [
 ]
 val_pipeline = [
     dict(type='LoadImage'),
+    dict(type='GetBBoxCenterScale', padding=1),
     dict(type='PackPoseInputs')
 ]
 
