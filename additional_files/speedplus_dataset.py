@@ -1,6 +1,6 @@
 # Custom MMPose dataset class for the SPEED+ dataset
 # Author: Matthieu Ruthven (matthieu.ruthven@uni.lu)
-# Last modified: 10th October 2023
+# Last modified: 11th October 2023
 
 # Import required modules
 import json
@@ -146,16 +146,18 @@ class SpeedPlusDataset(BaseDataset):
                 'id': ann_id,
                 'img_id': int(ann['filename'][3:-4]),
                 'img_path': osp.join(self.data_prefix['img'], ann['filename']),
+                'input_size': (640, 640),
                 'keypoints': keypoints,
                 'keypoints_visible': keypoints_visible,
-                'bbox': np.array([0, 0, 640, 640], dtype=np.float32).reshape(1, 4)
+                'bbox': np.array([0, 0, 640, 640], dtype=np.float32).reshape(1, 4),
+                'bbox_score': np.ones(1, dtype=np.float32)
             }
 
             if instance_info['img_id'] not in used_img_ids:
                 used_img_ids.add(instance_info['img_id'])
                 image_list.append({
                     'img_id': instance_info['img_id'],
-                    'img_path': instance_info['img_path'],
+                    'img_path': instance_info['img_path']
                 })
 
             instance_list.append(instance_info)
