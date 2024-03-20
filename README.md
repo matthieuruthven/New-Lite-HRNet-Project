@@ -6,10 +6,10 @@
 
 For more information about any of the following installation steps, see the MMPose installation instructions [here](https://mmpose.readthedocs.io/en/latest/installation.html).
 
-### 1. Clone the Lite-HRNet-DSNT GitLab project
+### 1. Clone this GitHub repository
 
 ```
-git clone ssh://git@gitlab.uni.lu:8022/mruthven/lite-hrnet-dsnt.git
+git clone https://github.com/matthieuruthven/New-Lite-HRNet-Project.git
 ```
 
 ### 2. Create conda environment with Python 3.8 and activate it
@@ -63,7 +63,7 @@ MMPose includes data loaders for datasets such as the [COCO](https://cocodataset
 
 For more information about any of the following steps, see the instructions [here](https://mmpose.readthedocs.io/en/latest/advanced_guides/customize_datasets.html).
 
-1. Add the `speedplus_dataset.py` file from this GitLab project to the `mmpose/datasets/datasets` folder
+1. Add the `speedplus_dataset.py` file from this GitHub repository to the `mmpose/datasets/datasets` folder
 
 2. Update the `__init__.py` file in the `mmpose/datasets/datasets` folder
 
@@ -71,6 +71,6 @@ For more information about any of the following steps, see the instructions [her
 
 For more information, see the instructions [here](https://mmpose.readthedocs.io/en/latest/advanced_guides/customize_transforms.html).
 
-1. Add the `my_transforms.py` file from this GitLab project to the `mmpose/datasets/transforms` folder
+1. Add the `my_transforms.py` file from this GitHub repository to the `mmpose/datasets/transforms` folder
 
 2. Update the `__init__.py` file in the `mmpose/datasets/transforms` folder
